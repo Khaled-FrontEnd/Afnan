@@ -207,7 +207,7 @@ const Home: React.FC = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-12 md:pt-2 pb-20 md:pb-32 max-h-screen">
+        <section className="relative overflow-hidden pt-12 md:pt-2 pb-20 md:pb-32 ">
           <div className="absolute inset-0 z-0" />
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid md:grid-cols-2 gap-12 items-center">
             {/* Content */}
