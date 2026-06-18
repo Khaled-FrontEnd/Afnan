@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+
+/* استيراد الخطوط */
+
+/* إعدادات Tailwind المخصصة */
+@theme {
+  --color-tertiary: #1c6938;
+  --color-secondary-fixed-dim: #f7be1d;
+  --color-primary: #276a00;
+  --color-on-secondary-fixed: #251a00;
+  --color-on-surface: #191c1b;
+  --color-error-container: #ffdad6;
+  --color-on-surface-variant: #41493a;
+  --color-secondary-fixed: #ffdf9a;
+  --color-primary-container: #3e841b;
+  --color-on-primary: #ffffff;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-fixed-dim: #8bd79b;
+  --color-surface-container-low: #f2f4f2;
+  --color-on-primary-fixed: #072100;
+  --color-on-tertiary-fixed-variant: #005226;
+  --color-surface-container-highest: #e1e3e1;
+  --color-background: #f8faf8;
+  --color-surface-bright: #f8faf8;
+  --color-inverse-surface: #2e3130;
+  --color-on-secondary-container: #6d5200;
+  --color-surface-container: #eceeec;
+  --color-tertiary-fixed: #a6f4b5;
+  --color-on-error: #ffffff;
+  --color-surface-dim: #d8dad9;
+  --color-on-secondary: #ffffff;
+  --color-surface-tint: #286c00;
+  --color-on-secondary-fixed-variant: #5a4300;
+  --color-on-tertiary-fixed: #00210b;
+  --color-inverse-on-surface: #eff1ef;
+  --color-on-tertiary-container: #f6fff3;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #a9f780;
+  --color-inverse-primary: #8eda67;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-background: #191c1b;
+  --color-secondary: #785a00;
+  --color-error: #ba1a1a;
+  --color-on-primary-container: #f8ffee;
+  --color-surface-container-high: #e6e9e7;
+  --color-surface: #f8faf8;
+  --color-outline-variant: #c0cab6;
+  --color-secondary-container: #fdc425;
+  --color-primary-fixed-dim: #8eda67;
+  --color-outline: #717a69;
+  --color-tertiary-container: #39834e;
+  --color-on-primary-fixed-variant: #1c5200;
+  --color-surface-variant: #e1e3e1;
+  
+  --spacing-margin-mobile: 16px;
+  --spacing-unit: 8px;
+  --spacing-container-max: 1280px;
+  --spacing-margin-desktop: 64px;
+  --spacing-gutter: 24px;
+  
+  --font-family-label-md: "IBM Plex Sans Arabic", sans-serif;
+  --font-family-body-md: "IBM Plex Sans Arabic", sans-serif;
+  --font-family-headline-lg-mobile: "IBM Plex Sans Arabic", sans-serif;
+  --font-family-body-lg: "IBM Plex Sans Arabic", sans-serif;
+  --font-family-headline-md: "IBM Plex Sans Arabic", sans-serif;
+  --font-family-display-lg: "IBM Plex Sans Arabic", sans-serif;
+  --font-family-headline-lg: "IBM Plex Sans Arabic", sans-serif;
+}
+
+/* أنماط مخصصة */
+body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  background-color: #f8faf8;
+  direction: rtl;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.active-nav-link {
+  border-bottom: 2px solid #276a00;
+  padding-bottom: 4px;
+  color: #276a00;
+  font-weight: 600;
+}
+
+.bento-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(39, 106, 0, 0.1);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  border-color: #276a00;
+  box-shadow: 0 10px 30px -10px rgba(39, 106, 0, 0.15);
+}
