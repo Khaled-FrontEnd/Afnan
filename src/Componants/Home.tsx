@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+// import { IoMdHome } from "react-icons/io";
+// import { MdMenuBook } from "react-icons/md";
 
 // Types
 interface NavLink {
@@ -241,10 +243,10 @@ const Home: React.FC = () => {
                       )}`
                     )
                   }
-                  className="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md flex items-center gap-2 hover:bg-primary-container transition-colors shadow-lg"
+                  className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
                 >
-                  <span className="material-symbols-outlined">menu_book</span>
-                  الالتحاق بحلقات الأطفال
+                  {/* <span className="material-symbols-outlined">menu_book</span> */}
+                  الحق طفلك بحلقات الأطفال
                 </button>
                 <button
                   onClick={() =>
@@ -256,7 +258,7 @@ const Home: React.FC = () => {
                   }
                   className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
                 >
-                  {` الالتحاق بحلقات الكبار (إناث)`}
+                  {` الالتحاق بحلقات الكبار ( إناث )`}
                 </button>
                 <button
                   onClick={() =>
@@ -268,7 +270,7 @@ const Home: React.FC = () => {
                   }
                   className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
                 >
-                  {` الالتحاق بحلقات الكبار (ذكور)`}
+                  {` الالتحاق بحلقات الكبار ( ذكور )`}
                 </button>
               </div>
             </div>
@@ -322,10 +324,10 @@ const Home: React.FC = () => {
         </section> */}
 
         {/* About Section */}
-        <section className="py-20 overflow-hidden">
+        <section className="md:py-20 overflow-hidden py-10">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="flex flex-col md:flex-row gap-16 items-center">
-              <div className="w-70 md:w-5/12 relative">
+              <div className="w-70 md:w-5/12 relative hidden md:block">
                 <div className="w-full aspect-square bg-primary/10 rounded-full absolute -top-8 -right-8 -z-10 animate-pulse" />
                 <div className="bg-white p-4 rounded-3xl shadow-xl rotate-3">
                   <img
@@ -357,7 +359,7 @@ const Home: React.FC = () => {
                       check
                     </span>
                     <span className="font-body-md text-body-md">
-                      الدراسة يويميا ولمدة شهر كامل
+                      الدراسة يوميا ولمدة شهر كامل
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
@@ -482,10 +484,10 @@ const Home: React.FC = () => {
             <div className="bg-primary rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
               <div className="relative z-10">
                 <h3 className="font-display-lg text-display-lg text-on-primary mb-6">
-                  ابدأ رحلتك في علم التجويد اليوم
+                  لا تتررد وألحق ابنك او ابنتك فورا بالحلقات
                 </h3>
                 <p className="font-body-lg text-body-lg text-on-primary/80 mb-10 max-w-2xl mx-auto">
-                  انضم إلى أكاديمية أفنان وألحق ابنك فورا بدورة سريعة ومضغوطة
+                  وانضم إلى أكاديمية أفنان وألحق ابنك فورا بدورة سريعة ومضغوطة
                   ومكثفه مع مؤلف المنظومة ومؤسس المنهج.
                 </p>
                 <div className="flex flex-col md:flex-row gap-4 justify-center">
