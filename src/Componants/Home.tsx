@@ -216,12 +216,12 @@ const Home: React.FC = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-12 md:pt-2 pb-20 md:pb-32 ">
+        <section className="relative overflow-hidden pt-12 md:pt-2 pb-2 md:pb-32 ">
           <div className="absolute inset-0 z-0" />
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid md:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div className="order-2 md:order-1">
-              <span className="inline-block bg-primary-container text-on-primary-container px-4 py-1 rounded-full font-label-md text-label-md mb-6">
+              <span className="inline-block bg-primary-container text-center text-on-primary-container px-4 py-1 rounded-full font-label-md text-label-md mb-6">
                 مرحبًا بكم في أكاديمية أفنان لتعليم الأطفال أحكام تجويد القرآن
               </span>
               <h2 className="font-display-lg text-display-lg text-primary mb-6 leading-tight">
@@ -309,7 +309,7 @@ const Home: React.FC = () => {
         </section> */}
 
         {/* About Section */}
-        <section className="py-24 overflow-hidden">
+        <section className="py-20 overflow-hidden">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="flex flex-col md:flex-row gap-16 items-center">
               <div className="w-70 md:w-5/12 relative">
@@ -332,7 +332,7 @@ const Home: React.FC = () => {
                   يجب أن يكون متاحاً للجميع، لذا صممنا برامجنا لتناسب مختلف
                   الأعمار والمستويات.
                 </p> */}
-                <ul className="space-y-4 mb-10">
+                <ul className="space-y-4 mb-1">
                   <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-primary bg-primary/10 p-1 rounded-full">
                       check
@@ -464,7 +464,7 @@ const Home: React.FC = () => {
         </section> */}
 
         {/* CTA Section */}
-        <section className="py-20">
+        <section className="py-10 pb-3">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="bg-primary rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
               <div className="relative z-10">
