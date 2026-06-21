@@ -223,13 +223,14 @@ const Home: React.FC = () => {
             <div className="order-2 md:order-1">
               <span className="inline-block bg-primary-container text-center text-on-primary-container px-4 py-1 rounded-full font-label-md text-label-md mb-6">
                 مرحبًا بكم في أكاديمية أفنان لتعليم الأطفال أحكام تجويد القرآن
+                فى شهر إن شاء الله تعالى
               </span>
               <h2 className="font-display-lg text-display-lg text-primary mb-6 leading-tight">
                 للشيخ: محمد حامد مدني إسماعيل
               </h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
                 مؤسس الأكاديمية وخبير تعليم تجويد القرآن الكريم للأطفال
-                وللمبتدئين من كل الأعمار فى شهر إن شاء اله تعالى.
+                وللمبتدئين من كل الأعمار فى شهر إن شاء الله تعالى.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <button
@@ -485,7 +486,7 @@ const Home: React.FC = () => {
                 </h3>
                 <p className="font-body-lg text-body-lg text-on-primary/80 mb-10 max-w-2xl mx-auto">
                   انضم إلى أكاديمية أفنان وألحق ابنك فورا بدورة سريعة ومضغوطة
-                  ومكفثة مع مؤلف المنظومة ومؤسس المنهج.
+                  ومكثفه مع مؤلف المنظومة ومؤسس المنهج.
                 </p>
                 <div className="flex flex-col md:flex-row gap-4 justify-center">
                   <button
