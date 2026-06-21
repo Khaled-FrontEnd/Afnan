@@ -121,8 +121,8 @@ const Home: React.FC = () => {
   const mobileNavItems: MobileNavItem[] = [
     { icon: "home", label: "الرئيسية", href: "#", active: true, filled: true },
     { icon: "menu_book", label: "الدروس", href: "#" },
-    { icon: "event_available", label: "حجز", href: "#" },
-    { icon: "person", label: "حسابي", href: "#" },
+    { icon: "info", label: "عنا", href: "#" },
+    { icon: "call_log", label: "تواصل", href: "#" },
   ];
 
   // تأثير التمرير للهيدر
@@ -198,7 +198,16 @@ const Home: React.FC = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-4">
-            <button className="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:scale-95 transition-transform">
+            <button
+              className="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:scale-95 transition-transform"
+              onClick={() =>
+                open(
+                  `https://wa.me/201129059622?text=${encodeURIComponent(
+                    "اريد التسجيل"
+                  )}`
+                )
+              }
+            >
               سجل الآن
             </button>
           </div>
@@ -213,22 +222,40 @@ const Home: React.FC = () => {
             {/* Content */}
             <div className="order-2 md:order-1">
               <span className="inline-block bg-primary-container text-on-primary-container px-4 py-1 rounded-full font-label-md text-label-md mb-6">
-                مرحبًا بكم في موقع منظومه أفنان
+                مرحبًا بكم في أكاديمية أفنان لتعليم الأطفال أحكام تجويد القرآن
               </span>
               <h2 className="font-display-lg text-display-lg text-primary mb-6 leading-tight">
-                للشيخ محمد حامد مدني إسماعيل
+                للشيخ: محمد حامد مدني إسماعيل
               </h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
-                مؤسس الأكاديمية وخبير تجويد القرآن الكريم والقراءات العشر، نكرس
-                جهودنا لتقديم تعليم إسلامي رصين يجمع بين الأصالة والمعاصرة.
+                مؤسس الأكاديمية وخبير تعليم تجويد القرآن الكريم للأطفال
+                وللمبتدئين من كل الأعمار فى شهر إن شاء اله تعالى.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md flex items-center gap-2 hover:bg-primary-container transition-colors shadow-lg">
+                <button
+                  onClick={() =>
+                    open(
+                      `https://wa.me/201129059622?text=${encodeURIComponent(
+                        "اريد الالتحاق بحلقات الأطفال"
+                      )}`
+                    )
+                  }
+                  className="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md flex items-center gap-2 hover:bg-primary-container transition-colors shadow-lg"
+                >
                   <span className="material-symbols-outlined">menu_book</span>
-                  ابدأ رحلتك التعليمية
+                  الالتحاق بحلقات الأطفال
                 </button>
-                <button className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors">
-                  تعرف على المنهج
+                <button
+                  onClick={() =>
+                    open(
+                      `https://wa.me/201129059622?text=${encodeURIComponent(
+                        "اريد الالتحاق بحلقات الكبار"
+                      )}`
+                    )
+                  }
+                  className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
+                >
+                  الالتحاق بحلقات الكبار
                 </button>
               </div>
             </div>
@@ -259,7 +286,7 @@ const Home: React.FC = () => {
         </section>
 
         {/* Statistics Section */}
-        <section className="py-16 bg-surface-container-low">
+        {/* <section className="py-16 bg-surface-container-low">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat) => (
@@ -279,39 +306,45 @@ const Home: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* About Section */}
         <section className="py-24 overflow-hidden">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="flex flex-col md:flex-row gap-16 items-center">
-              <div className="w-full md:w-5/12 relative">
+              <div className="w-70 md:w-5/12 relative">
                 <div className="w-full aspect-square bg-primary/10 rounded-full absolute -top-8 -right-8 -z-10 animate-pulse" />
                 <div className="bg-white p-4 rounded-3xl shadow-xl rotate-3">
                   <img
                     className="rounded-2xl w-full h-full object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIZmv8kweCg9E3i7VwBOtcCT9vFsb0gKzSpwcn7mJkP6Uunlf08FJRT6DH3T9N45CKL28LA80f4gCmgPeaI2NCNkoNZmAm0WtBfB3p4ER_oH3i1OCg6oibZ8Gpwa_JFd7fG3PwxlnJTbNFw9GEnKzgAUUXzCOOgBgxH3YloUZVglOAgWt5FJKh7wA91CQeVMTbUBde-oBCMpNa1guLBsG_6U5vZNVdiazwxh-7wyxgnd2DnGNo_tXAlp7KcEkETV7vCcocPq7XKw"
+                    src="./panner.png"
                     alt="قاعة دراسية إسلامية حديثة"
                   />
                 </div>
               </div>
               <div className="w-full md:w-7/12">
                 <h3 className="font-headline-lg text-headline-lg text-primary mb-6">
-                  رؤيتنا في تعليم القرآن واللغة
+                  كيفية الالتحاق بالاكاديمية
                 </h3>
-                <p className="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+                {/* <p className="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
                   تسعى أكاديمية الشيخ محمد حامد مدني إلى أن تكون المنارة الرائدة
                   في تعليم القرآن الكريم والعلوم الإسلامية. نحن نؤمن بأن التعليم
                   يجب أن يكون متاحاً للجميع، لذا صممنا برامجنا لتناسب مختلف
                   الأعمار والمستويات.
-                </p>
+                </p> */}
                 <ul className="space-y-4 mb-10">
                   <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-primary bg-primary/10 p-1 rounded-full">
                       check
                     </span>
+                    <span className="font-body-md text-body-md">التقديم</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="material-symbols-outlined text-primary bg-primary/10 p-1 rounded-full">
+                      check
+                    </span>
                     <span className="font-body-md text-body-md">
-                      منهجية تعليمية معتمدة ومسندة
+                      الدراسة يويميا ولمدة شهر كامل
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
@@ -319,37 +352,41 @@ const Home: React.FC = () => {
                       check
                     </span>
                     <span className="font-body-md text-body-md">
-                      متابعة فردية دقيقة لكل طالب
+                      فترة مراجعة
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-primary bg-primary/10 p-1 rounded-full">
                       check
                     </span>
-                    <span className="font-body-md text-body-md">
-                      بيئة تعليمية محفزة وممتعة للأطفال
+                    <span className="font-body-md text-body-md">إمتحان</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="material-symbols-outlined text-primary bg-primary/10 p-1 rounded-full">
+                      check
                     </span>
+                    <span className="font-body-md text-body-md">إجازة</span>
                   </li>
                 </ul>
-                <button className="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
+                {/* <button className="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
                   اكتشف المزيد عن منهجنا
                   <span className="material-symbols-outlined">arrow_back</span>
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
         </section>
 
         {/* Featured Lessons Section */}
-        <section className="py-24 bg-surface">
+        {/* <section className="py-24 bg-surface">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12 flex justify-between items-end">
             <div>
               <h3 className="font-headline-lg text-headline-lg text-primary text-4xl">
                 الدروس
               </h3>
-              {/* <p className="font-body-md text-body-md text-on-surface-variant">
+               <p className="font-body-md text-body-md text-on-surface-variant">
                 اختر المسار التعليمي الذي يناسب تطلعاتك
-              </p> */}
+              </p> 
             </div>
             <button className="text-on-surface-variant flex items-center gap-2 hover:gap-4 transition-all font-label-md text-label-md border-b border-text-on-surface-variant pb-1">
               عرض جميع الدروس
@@ -424,7 +461,7 @@ const Home: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA Section */}
         <section className="py-20">
@@ -435,15 +472,29 @@ const Home: React.FC = () => {
                   ابدأ رحلتك في علم التجويد اليوم
                 </h3>
                 <p className="font-body-lg text-body-lg text-on-primary/80 mb-10 max-w-2xl mx-auto">
-                  انضم إلى مجتمعنا التعليمي المتميز واحصل على أول حصة تجريبية
-                  مجانية مع أحد خبرائنا.
+                  انضم إلى أكاديمية أفنان وألحق ابن فورا بدورة سريعة ومضغوطة
+                  ومكفثة م مؤلف المنظومة ومؤسس المنهج.
                 </p>
                 <div className="flex flex-col md:flex-row gap-4 justify-center">
-                  <button className="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform">
-                    إستمارة أطفال
+                  <button
+                    onClick={() =>
+                      open(
+                        `https://youtube.com/playlist?list=PLtF30SVt7kmjemykrUKgg5eTE7ENQhytR&si=IJlB0TQGF_bdgStU`
+                      )
+                    }
+                    className="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform"
+                  >
+                    شاهد دورات كاملة للأطفال
                   </button>
-                  <button className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">
-                    إستمارة كبار
+                  <button
+                    onClick={() =>
+                      open(
+                        `https://youtube.com/playlist?list=PLtF30SVt7kmijEnQQe1P_kyUxFt7PaBai&si=-A9EVg8LMSkbswsG`
+                      )
+                    }
+                    className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all"
+                  >
+                    شاهد دورات كاملة للكبار
                   </button>
                 </div>
               </div>
@@ -452,7 +503,7 @@ const Home: React.FC = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-24 bg-surface-container-highest relative overflow-hidden">
+        {/* <section className="py-24 bg-surface-container-highest relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
             <div className="text-center mb-16">
@@ -509,7 +560,7 @@ const Home: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       {/* Footer */}
@@ -517,14 +568,10 @@ const Home: React.FC = () => {
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2">
-              <img
-                alt="Logo"
-                className="h-20 mb-6"
-                src="./logo.png"
-              />
+              <img alt="Logo" className="h-20 mb-6" src="./logo.png" />
               <p className="font-body-md text-body-md text-on-surface-variant max-w-sm mb-8">
-                أكاديمية تعليمية متخصصة في تحفيظ القرآن الكريم وتدريس علوم اللغة
-                العربية، نجمع بين عراقة المنهج وتطور الوسيلة.
+                أكاديمية تعليمية متخصصة في تعليم تجويد القرآن الكريم وتدريسه
+                للأطفال.
               </p>
               <div className="flex gap-4">
                 <a
@@ -547,7 +594,7 @@ const Home: React.FC = () => {
                 </a>
               </div>
             </div>
-            <div>
+            {/* <div>
               <h5 className="font-bold mb-6 text-primary">روابط سريعة</h5>
               <ul className="space-y-4 font-body-md text-body-md text-on-surface-variant">
                 <li>
@@ -571,16 +618,19 @@ const Home: React.FC = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <div>
               <h5 className="font-bold mb-6 text-primary">الدعم والمساعدة</h5>
               <ul className="space-y-4 font-body-md text-body-md text-on-surface-variant">
                 <li>
-                  <a className="hover:text-primary transition-colors" href="#">
+                  <a
+                    className="hover:text-primary transition-colors"
+                    onClick={() => open(`https://wa.me/201129059622`)}
+                  >
                     تواصل معنا
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a className="hover:text-primary transition-colors" href="#">
                     سياسة الخصوصية
                   </a>
@@ -594,13 +644,14 @@ const Home: React.FC = () => {
                   <a className="hover:text-primary transition-colors" href="#">
                     الدعم الفني
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
           <div className="border-t border-outline-variant pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-label-md text-label-md text-on-surface-variant text-center md:text-right">
-              © 2026 أكاديمية الشيخ محمد حامد مدني. جميع الحقوق محفوظة.
+              © 2026 أكاديمية أفنان لتعليم الأطفال احكام تجويد القران. جميع
+              الحقوق محفوظة.
             </p>
             <div className="flex items-center gap-2">
               <span
