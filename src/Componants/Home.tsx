@@ -235,10 +235,23 @@ const Home: React.FC = () => {
                 وللمبتدئين من كل الأعمار ومؤلف منظومة أفنان لتعليم الأطفال أحكام
                 تجويد القرآن في شهر واحد إن شاء الله تعالى.
               </p>
-              <h2 className="font-display-lg text-center  text-display-lg text-primary mb-6 leading-tight">
+              {/* <h2 className="font-display-lg text-center  text-display-lg text-primary mb-6 leading-tight">
                 نبذة عن نظام الدراسة بالأكاديمية
-              </h2>
+              </h2> */}
               <div className="flex flex-wrap gap-4 justify-center">
+                <button
+                  onClick={() =>
+                    open(
+                      `https://wa.me/201129059622?text=${encodeURIComponent(
+                        "نظام الدراسه"
+                      )}`
+                    )
+                  }
+                  className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
+                >
+                  {/* <span className="material-symbols-outlined">menu_book</span> */}
+                  نبذة عن نظام الدراسة بالأكاديمية
+                </button>
                 <button
                   onClick={() =>
                     open(
