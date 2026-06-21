@@ -238,7 +238,7 @@ const Home: React.FC = () => {
               {/* <h2 className="font-display-lg text-center  text-display-lg text-primary mb-6 leading-tight">
                 نبذة عن نظام الدراسة بالأكاديمية
               </h2> */}
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-4 justify-center ">
                 <button
                   onClick={() =>
                     open(
@@ -247,7 +247,7 @@ const Home: React.FC = () => {
                       )}`
                     )
                   }
-                  className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
+                  className="border-2 cursor-pointer border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
                 >
                   {/* <span className="material-symbols-outlined">menu_book</span> */}
                   نبذة عن نظام الدراسة بالأكاديمية
@@ -260,7 +260,7 @@ const Home: React.FC = () => {
                       )}`
                     )
                   }
-                  className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
+                  className="border-2 cursor-pointer border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
                 >
                   {/* <span className="material-symbols-outlined">menu_book</span> */}
                   الحق طفلك بحلقات الأطفال
@@ -273,7 +273,7 @@ const Home: React.FC = () => {
                       )}`
                     )
                   }
-                  className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
+                  className="border-2 cursor-pointer border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
                 >
                   {` الالتحاق بحلقات الكبار ( إناث )`}
                 </button>
@@ -285,7 +285,7 @@ const Home: React.FC = () => {
                       )}`
                     )
                   }
-                  className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
+                  className="border-2 cursor-pointer border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
                 >
                   {` الالتحاق بحلقات الكبار ( ذكور )`}
                 </button>
@@ -509,7 +509,7 @@ const Home: React.FC = () => {
                 </h3>
                 <p className="font-body-lg text-body-lg text-on-primary/80 mb-10 max-w-2xl mx-auto">
                   وانضم إلى أكاديمية أفنان وألحق ابنك فورا بدورة سريعة ومضغوطة
-                  ومكثفه مع مؤلف المنظومة ومؤسس المنهج.
+                  ومكثفه ولمدة شهر واحد إن شاء الله تعالى.
                 </p>
                 <div className="flex flex-col md:flex-row gap-4 justify-center">
                   <button
