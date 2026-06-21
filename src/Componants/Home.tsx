@@ -472,8 +472,8 @@ const Home: React.FC = () => {
                   ابدأ رحلتك في علم التجويد اليوم
                 </h3>
                 <p className="font-body-lg text-body-lg text-on-primary/80 mb-10 max-w-2xl mx-auto">
-                  انضم إلى أكاديمية أفنان وألحق ابن فورا بدورة سريعة ومضغوطة
-                  ومكفثة م مؤلف المنظومة ومؤسس المنهج.
+                  انضم إلى أكاديمية أفنان وألحق ابنك فورا بدورة سريعة ومضغوطة
+                  ومكفثة مع مؤلف المنظومة ومؤسس المنهج.
                 </p>
                 <div className="flex flex-col md:flex-row gap-4 justify-center">
                   <button
