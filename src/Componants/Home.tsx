@@ -232,8 +232,12 @@ const Home: React.FC = () => {
               </h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
                 مؤسس الأكاديمية وخبير تعليم تجويد القرآن الكريم للأطفال
-                وللمبتدئين من كل الأعمار فى شهر إن شاء الله تعالى.
+                وللمبتدئين من كل الأعمار ومؤلف منظومة أفنان لتعليم الأطفال أحكام
+                تجويد القرآن في شهر واحد إن شاء الله تعالى.
               </p>
+              <h2 className="font-display-lg text-center  text-display-lg text-primary mb-6 leading-tight">
+                نبذة عن نظام الدراسة بالأكاديمية
+              </h2>
               <div className="flex flex-wrap gap-4 justify-center">
                 <button
                   onClick={() =>
@@ -339,7 +343,7 @@ const Home: React.FC = () => {
               </div>
               <div className="w-full md:w-7/12">
                 <h3 className="font-headline-lg text-headline-lg text-primary mb-6">
-                  كيفية الالتحاق بالاكاديمية
+                  مراحل الدراسة بالأكاديمية
                 </h3>
                 {/* <p className="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
                   تسعى أكاديمية الشيخ محمد حامد مدني إلى أن تكون المنارة الرائدة
@@ -367,20 +371,24 @@ const Home: React.FC = () => {
                       check
                     </span>
                     <span className="font-body-md text-body-md">
-                      فترة مراجعة
+                      فترة مراجعة ( أسبوع أو عشرة أيام )
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-primary bg-primary/10 p-1 rounded-full">
                       check
                     </span>
-                    <span className="font-body-md text-body-md">إمتحان</span>
+                    <span className="font-body-md text-body-md">
+                      امتحان ( نظري وعملي )
+                    </span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-primary bg-primary/10 p-1 rounded-full">
                       check
                     </span>
-                    <span className="font-body-md text-body-md">إجازة</span>
+                    <span className="font-body-md text-body-md">
+                      إجازة ( من الناظم في منظومة أفنان )
+                    </span>
                   </li>
                 </ul>
                 {/* <button className="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
