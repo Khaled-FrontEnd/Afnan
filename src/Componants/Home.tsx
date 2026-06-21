@@ -231,7 +231,7 @@ const Home: React.FC = () => {
                 مؤسس الأكاديمية وخبير تعليم تجويد القرآن الكريم للأطفال
                 وللمبتدئين من كل الأعمار فى شهر إن شاء اله تعالى.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center">
                 <button
                   onClick={() =>
                     open(
@@ -255,7 +255,19 @@ const Home: React.FC = () => {
                   }
                   className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
                 >
-                  الالتحاق بحلقات الكبار
+                  {` الالتحاق بحلقات الكبار (إناث)`}
+                </button>
+                <button
+                  onClick={() =>
+                    open(
+                      `https://wa.me/201129059622?text=${encodeURIComponent(
+                        "اريد الالتحاق بحلقات الكبار"
+                      )}`
+                    )
+                  }
+                  className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors"
+                >
+                  {` الالتحاق بحلقات الكبار (ذكور)`}
                 </button>
               </div>
             </div>
