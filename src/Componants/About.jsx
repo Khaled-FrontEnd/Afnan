@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 const AboutPage = () => {
   return (
-    <div className="bg-surface text-on-surface font-sans">
+    <div className="bg-surface text-on-surface ">
       {/* TopAppBar */}
       <Navbar />
 
