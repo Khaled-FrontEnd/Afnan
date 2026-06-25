@@ -25,7 +25,7 @@ import Footer from './Footer';
 
 const ContactPage = () => {
   return (
-    <div className="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed font-sans">
+    <div className="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
       {/* Top Navigation Bar */}
       <Navbar />
 
