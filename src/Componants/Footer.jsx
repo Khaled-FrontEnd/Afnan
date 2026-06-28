@@ -55,34 +55,7 @@ export default function Footer() {
                   </li>
               </ul>
             </div> */}
-          <div>
-            <h5 className="font-bold mb-6 text-primary">الدعم والمساعدة</h5>
-            <ul className="space-y-4 font-body-md text-body-md text-on-surface-variant">
-              <li>
-                <a
-                  className="hover:text-primary transition-colors"
-                  onClick={() => open(`https://wa.me/201129059622`)}
-                >
-                  تواصل معنا
-                </a>
-              </li>
-              {/* <li>
-                  <a className="hover:text-primary transition-colors" href="#">
-                    سياسة الخصوصية
-                    </a>
-                    </li>
-                    <li>
-                    <a className="hover:text-primary transition-colors" href="#">
-                    شروط الاستخدام
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-primary transition-colors" href="#">
-                    الدعم الفني
-                    </a>
-                    </li> */}
-            </ul>
-          </div>
+
         </div>
         <div className="border-t border-outline-variant pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-label-md text-label-md text-on-surface-variant text-center md:text-right">

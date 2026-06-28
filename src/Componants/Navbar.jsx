@@ -45,7 +45,7 @@ function Navbar() {
   }, []);
 
   let location = useLocation().pathname
-  console.log(location)
+  // console.log(location)
 
   return (
     <>
@@ -93,7 +93,7 @@ function Navbar() {
                 )
               }
             >
-              سجل الآن
+             إدعمنا
             </button>
           </div>
         </nav>

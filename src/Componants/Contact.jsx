@@ -142,7 +142,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-white/70 mb-1">موقعنا</p>
-                      <p className="text-lg">أكاديمية الشيخ محمد حامد مدني إسماعيل، القاهرة، مصر</p>
+                      <p className="text-lg">أكاديمية أفنان لتعليم الأطفال أحكام تجويد القرآن الكريم طهطا ,سوهاج ,مصر</p>
                     </div>
                   </div>
                 </div>
@@ -180,7 +180,7 @@ const ContactPage = () => {
         </section>
 
         {/* Academic Support Section */}
-        <section className="bg-surface-container-highest/50 py-24">
+        {/* <section className="bg-surface-container-highest/50 py-24">
           <div className="max-w-[1280px] mx-auto px-4 md:px-16 text-center">
             <h3 className="text-3xl font-semibold text-primary mb-12">كيف يمكننا مساعدتكم أكثر؟</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -219,7 +219,7 @@ const ContactPage = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       {/* Footer */}

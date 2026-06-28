@@ -5,8 +5,6 @@ import Footer from "./Footer";
 // import { MdMenuBook } from "react-icons/md";
 
 const Home: React.FC = () => {
-  
-
   // تأثير النقر على البطاقات
   useEffect(() => {
     const cards = document.querySelectorAll(".bento-card");
@@ -119,17 +117,18 @@ const Home: React.FC = () => {
             <div className="order-1 md:order-2 flex justify-center md:mt-12">
               <div className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-2xl border-4 border-surface-container-lowest">
                 <iframe
-                  height={"350px"}
+                  height={"250px"}
                   width={"100%"}
-                  src="https://www.youtube.com/embed/3ls03mOs-mM"
+                  src="./video.mp4"
                   title="منظومة أفنان لتعليم الأطفال تجويد القرآن (فى شهر واحد إن شاء الله تعالى)  واتس المؤلف 00201129059622"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 ></iframe>
-                <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="text-white font-headline-md text-headline-md">
-                    فيديو تعريفي عن المنظومه
+                <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black to-transparent">
+                  <p className="text-white font-headline-md text-headline-md text-center">
+                   منظومة أفنان لتعليم الأطفال أحكام تجويد القرآن
+                   (المستويات الثلاثه)
                   </p>
                   {/* <p className="text-secondary-fixed-dim font-label-md text-label-md">
                     مؤسس ومشرف الأكاديمية
@@ -343,7 +342,7 @@ const Home: React.FC = () => {
                     }
                     className="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform"
                   >
-                    شاهد دورات كاملة للأطفال
+                    حلقات الأطفال (إناث){" "}
                   </button>
                   <button
                     onClick={() =>
@@ -353,7 +352,7 @@ const Home: React.FC = () => {
                     }
                     className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all"
                   >
-                    شاهد دورات كاملة للكبار
+                    حلقات الأطفال (ذكور){" "}
                   </button>
                 </div>
               </div>
@@ -423,7 +422,6 @@ const Home: React.FC = () => {
       </main>
 
       {/* Footer */}
-      
 
       {/* Mobile Bottom Navigation */}
       <Footer />
