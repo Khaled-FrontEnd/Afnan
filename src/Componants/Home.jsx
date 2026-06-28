@@ -1,36 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { FaCheck, FaStar, FaClock, FaChevronLeft, FaQuoteLeft, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import {
+  FaCheck,
+  FaStar,
+  FaClock,
+  FaChevronLeft,
+  FaQuoteLeft,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
 import { MdMenuBook, MdHome, MdSchedule, MdArrowBack } from "react-icons/md";
+import { supabase } from "../utils/supabase";
 
 const Home = () => {
-  // تأثير النقر على البطاقات
-  useEffect(() => {
-    const cards = document.querySelectorAll(".bento-card");
 
-    const handleMouseDown = (e) => {
-      const target = e.currentTarget;
-      target.style.transform = "scale(0.98)";
-    };
-
-    const handleMouseUp = (e) => {
-      const target = e.currentTarget;
-      target.style.transform = "";
-    };
-
-    cards.forEach((card) => {
-      card.addEventListener("mousedown", handleMouseDown);
-      card.addEventListener("mouseup", handleMouseUp);
-    });
-
-    return () => {
-      cards.forEach((card) => {
-        card.removeEventListener("mousedown", handleMouseDown);
-        card.removeEventListener("mouseup", handleMouseUp);
-      });
-    };
-  }, []);
+  const handleMouseDown = (e) => {
+    e.currentTarget.style.transform = "scale(0.98)";
+  };
+  const handleMouseUp = (e) => {
+    e.currentTarget.style.transform = "";
+  };
 
   return (
     <div className="text-on-surface">
@@ -118,7 +108,7 @@ const Home = () => {
                 <iframe
                   height={"250px"}
                   width={"100%"}
-                  src="./video.mp4"
+                  src="./video.mp4?autoplay=0&controls=1"
                   title="منظومة أفنان لتعليم الأطفال تجويد القرآن (فى شهر واحد إن شاء الله تعالى)  واتس المؤلف 00201129059622"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -126,8 +116,8 @@ const Home = () => {
                 ></iframe>
                 <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black to-transparent">
                   <p className="text-white font-headline-md text-headline-md text-center">
-                   منظومة أفنان لتعليم الأطفال أحكام تجويد القرآن
-                   (المستويات الثلاثه)
+                    منظومة أفنان لتعليم الأطفال أحكام تجويد القرآن (المستويات
+                    الثلاثه)
                   </p>
                 </div>
               </div>

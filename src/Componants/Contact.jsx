@@ -160,7 +160,7 @@ const ContactPage = () => {
               </div>
 
               {/* Map/Visual Card */}
-              <div className="bg-surface border border-outline-variant rounded-2xl overflow-hidden h-64  relative group">
+              {/* <div className="bg-surface border border-outline-variant rounded-2xl overflow-hidden h-64  relative group">
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
                   style={{
@@ -174,7 +174,7 @@ const ContactPage = () => {
                     الحصول على الاتجاهات
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
