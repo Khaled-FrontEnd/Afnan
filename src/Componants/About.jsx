@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaFlag,
   FaEye,
@@ -16,8 +16,14 @@ import {
   FaEnvelope,
   FaPhone,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const AboutPage = ({ links }) => {
+  const { t } = useTranslation();
+   useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+
   return (
     <div className="bg-surface text-on-surface ">
       {/* TopAppBar */}
@@ -36,11 +42,10 @@ const AboutPage = ({ links }) => {
           <div className="absolute inset-0 hero-gradient"></div>
           <div className="relative w-full max-w-container-max mx-auto px-margin-desktop px-margin-mobile text-center">
             <h1 className="font-display-lg text-display-lg text-on-primary mb-6">
-              أكاديمية أفنان لتعليم الأطفال أحكام تجويد القرآن{" "}
+              {t("أكاديمية أفنان لتعليم الأطفال أحكام تجويد القرآن")}
             </h1>
             <p className="font-body-lg text-body-lg text-primary-fixed max-w-2xl mx-auto opacity-90">
-              صرح تعليمي رائد مخصص لتعلم تجويد القرآن الكريم، يجمع بين الأصالة
-              والحداثة في التعليم.
+              {t("صرح تعليمي رائد مخصص لتعلم تجويد القرآن الكريم، يجمع بين الأصالة والحداثة في التعليم.")}
             </p>
           </div>
         </section>
@@ -50,20 +55,17 @@ const AboutPage = ({ links }) => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
               <span className="text-secondary font-medium tracking-widest uppercase mb-4 block">
-                رحلتنا
+                {t("رحلتنا")}
               </span>
               <h2 className="text-3xl font-semibold text-on-surface mb-8">
-                قصة التأسيس والجذور
+                {t("قصة التأسيس والجذور")}
               </h2>
               <div className="space-y-6 text-base text-on-surface-variant leading-relaxed">
                 <p>
-                  ابتكر الشيخ محمد حامد مدني طريقة جديدة لتوصيل التجويد للأطفال
-                  فى فترة قياسية عالميا وجربها على الاف الاطفال واثبتت وجودها
-                  ونجاحها بفضل الله تعالى
+                  {t("ابتكر الشيخ محمد حامد مدني طريقة جديدة لتوصيل التجويد للأطفال فى فترة قياسية عالميا وجربها على الاف الاطفال واثبتت وجودها ونجاحها بفضل الله تعالى")}
                 </p>
                 <p>
-                  وذلك بعد دراسة لكل المشاكل التعليمية أثناء تعليم الأطفال
-                  التجويد لسنوات طويلة
+                  {t("وذلك بعد دراسة لكل المشاكل التعليمية أثناء تعليم الأطفال التجويد لسنوات طويلة")}
                 </p>
               </div>
             </div>
@@ -72,7 +74,7 @@ const AboutPage = ({ links }) => {
                 <img
                   className="w-full h-full object-cover"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtmAjYHXxn9SkUKXe1OIr_az3S5_celEJ5-i_hYqZ2I95Ag-iYprVZvA5CgcqZqjvvW96o4T2X23gQo78NngdQV_YqNwkPsk1xB0aUCbwkgBPwSXddusTt4D0VW3CZpIHqdHxcKeYuWQVW_P2IRXEkUP9-SQNK49WB1BgeX0WfZY8aSe6ta351KT25AbQZJE_Wl6krX7AUE0vtJYoMKSo01j0t5tFBSvikpbPqQgmH5lHYERmmBKveJZ_IOZAAb23ywa3waZrz8Q"
-                  alt="A close-up shot of a hand-written Arabic calligraphy scroll being examined with a magnifying glass on a rustic wooden desk."
+                  alt={t("مخطوطة عربية مكتوبة بخط اليد تُفحص بعدسة مكبرة على مكتب خشبي ريفي")}
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary-container rounded-full flex items-center justify-center -z-10 opacity-20"></div>
@@ -85,7 +87,7 @@ const AboutPage = ({ links }) => {
           <div className="max-w-[1280px] mx-auto px-4 md:px-16">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-semibold text-primary mb-4">
-                الرؤية والرسالة والقيم
+                {t("الرؤية والرسالة والقيم")}
               </h2>
               <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
             </div>
@@ -94,20 +96,18 @@ const AboutPage = ({ links }) => {
               <div className="md:col-span-2 bento-card bg-surface-container-lowest p-10 rounded-xl border border-outline-variant">
                 <FaFlag className="text-primary text-4xl mb-6" />
                 <h3 className="text-2xl font-semibold text-on-surface mb-4">
-                  رسالتنا
+                  {t("رسالتنا")}
                 </h3>
                 <p className="text-base text-on-surface-variant">
-                  تمكين الطلاب من فهم وتطبيق التجويد وحب علم التجويد والقدرة علي
-                  توصيله للآخرين.
+                  {t("تمكين الطلاب من فهم وتطبيق التجويد وحب علم التجويد والقدرة علي توصيله للآخرين.")}
                 </p>
               </div>
               {/* Vision */}
               <div className="bento-card bg-primary-container p-10 rounded-xl text-on-primary-container">
                 <FaEye className="text-secondary-fixed text-4xl mb-6" />
-                <h3 className="text-2xl font-semibold mb-4">رؤيتنا</h3>
+                <h3 className="text-2xl font-semibold mb-4">{t("رؤيتنا")}</h3>
                 <p className="text-base">
-                  أن نكون الأكاديمية الرائدة عالمياً في تقديم علم التجويد
-                  للأطفال في العالم الإسلامي.
+                  {t("أن نكون الأكاديمية الرائدة عالمياً في تقديم علم التجويد للأطفال في العالم الإسلامي.")}
                 </p>
               </div>
               {/* Values */}
@@ -116,10 +116,10 @@ const AboutPage = ({ links }) => {
                   <FaCheckCircle className="text-tertiary text-xl" />
                 </div>
                 <h4 className="text-2xl font-semibold text-on-surface mb-2">
-                  الأصالة
+                  {t("الأصالة")}
                 </h4>
                 <p className="text-sm font-medium text-on-surface-variant">
-                  التمسك بالمنهج النبوي الصحيح في التدرج في التعليم.
+                  {t("التمسك بالمنهج النبوي الصحيح في التدرج في التعليم.")}
                 </p>
               </div>
               <div className="bento-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant flex flex-col items-center text-center">
@@ -127,11 +127,10 @@ const AboutPage = ({ links }) => {
                   <FaMedal className="text-secondary text-xl" />
                 </div>
                 <h4 className="text-2xl font-semibold text-on-surface mb-2">
-                  الإتقان
+                  {t("الإتقان")}
                 </h4>
                 <p className="text-sm font-medium text-on-surface-variant">
-                  قراءة كتاب الله عز وجل قراءة مفسرة جيدة حسنة كما قراءة رسول
-                  الله صلي الله عليه وسلم.
+                  {t("قراءة كتاب الله عز وجل قراءة مفسرة جيدة حسنة كما قراءة رسول الله صلي الله عليه وسلم.")}
                 </p>
               </div>
               <div className="bento-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant flex flex-col items-center text-center">
@@ -139,11 +138,10 @@ const AboutPage = ({ links }) => {
                   <FaUsers className="text-primary text-xl" />
                 </div>
                 <h4 className="text-2xl font-semibold text-on-surface mb-2">
-                  التركيز على الطالب
+                  {t("التركيز على الطالب")}
                 </h4>
                 <p className="text-sm font-medium text-on-surface-variant">
-                  تعليم الطالب مهاره القراءة الصحيحه ومهاره إكتشاف الخطأ ومهاره
-                  تصحيح الخطأ.
+                  {t("تعليم الطالب مهاره القراءة الصحيحه ومهاره إكتشاف الخطأ ومهاره تصحيح الخطأ.")}
                 </p>
               </div>
             </div>
@@ -157,43 +155,31 @@ const AboutPage = ({ links }) => {
               <img
                 className="w-full h-full object-cover"
                 src="./photo.jpeg"
-                alt="A professional, dignified portrait of a scholar in traditional Islamic attire."
+                alt={t("صورة شخصية مهيبة للشيخ بالزي الإسلامي التقليدي")}
               />
             </div>
             <div className="p-12 lg:p-20 flex flex-col justify-center">
               <h2 className="text-3xl font-semibold text-primary mb-2">
-                عن فضيلة الشيخ
+                {t("عن فضيلة الشيخ")}
               </h2>
               <h3 className="text-2xl font-semibold text-on-surface mb-6">
-                محمد حامد مدني إسماعيل
+                {t("محمد حامد مدني إسماعيل")}
               </h3>
               <div className="space-y-6 text-base text-on-surface-variant">
                 <p>
-                  الشيخ / محمد حامد مدني إسماعيل الطهطاوى المصري هو إمام وخطيب
-                  ومدرس بوزارة الأوقاف المصرية وعضوا بالنقابة العامة لمحفظى
-                  وقراء القران الكريم بجمهورية مصر العربية وهو مؤلف منظومة أفنان
-                  لتعليم الأطفال أحكام تجويد القرآن ومبتكر لطريقة سهلة جدا
-                  لتعليم الأطفال التجويد فى شهر واحد فقط بنظام الدورات المكثفة
-                  وقد أثبتت نجاحا مبهرا وتعلم بها آلاف الأطفال.
+                  {t("الشيخ / محمد حامد مدني إسماعيل الطهطاوى المصري هو إمام وخطيب ومدرس بوزارة الأوقاف المصرية وعضوا بالنقابة العامة لمحفظى وقراء القران الكريم بجمهورية مصر العربية وهو مؤلف منظومة أفنان لتعليم الأطفال أحكام تجويد القرآن ومبتكر لطريقة سهلة جدا لتعليم الأطفال التجويد فى شهر واحد فقط بنظام الدورات المكثفة وقد أثبتت نجاحا مبهرا وتعلم بها آلاف الأطفال.")}
                 </p>
                 <ul className="space-y-3">
-                  {/* <li className="flex items-start gap-3">
-                    <FaSchool className="text-secondary shrink-0 mt-1" />
-                    <span>
-        
-                      علماء العصر.
-                    </span>
-                  </li> */}
                   <li className="flex items-start gap-3">
                     <FaStar className="text-secondary shrink-0 mt-1" />
                     <span>
-                      مؤسس ورئيس الأكاديمية والمشرف العام على مناهجها التعليمية.
+                      {t("مؤسس ورئيس الأكاديمية والمشرف العام على مناهجها التعليمية.")}
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <FaHistory className="text-secondary shrink-0 mt-1" />
                     <span>
-                      مؤلف لعدة كتب ومنهجيات في تيسير حفظ القرآن وتجويده.
+                      {t("مؤلف لعدة كتب ومنهجيات في تيسير حفظ القرآن وتجويده.")}
                     </span>
                   </li>
                 </ul>
@@ -207,10 +193,10 @@ const AboutPage = ({ links }) => {
           <div className="max-w-[1280px] mx-auto px-4 md:px-16">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-semibold mb-4">
-                منهجيتنا التعليمية
+                {t("منهجيتنا التعليمية")}
               </h2>
               <p className="text-lg opacity-80 max-w-2xl mx-auto">
-                نعتمد في الأكاديمية على طريقة جديده وحديثه في التعليم.
+                {t("نعتمد في الأكاديمية على طريقة جديده وحديثه في التعليم.")}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -219,20 +205,21 @@ const AboutPage = ({ links }) => {
                   <FaMicrophone className="text-3xl" />
                 </div>
                 <h4 className="text-2xl font-semibold mb-2">
-                  التلقي والمشافهة
+                  {t("التلقي والمشافهة")}
                 </h4>
                 <p className="text-sm font-medium opacity-80">
-                  يتلقي الطفل الدرس النظري في التجويد ويتدرب عليه عمليا.
+                  {t("يتلقي الطفل الدرس النظري في التجويد ويتدرب عليه عمليا.")}
                 </p>
               </div>
               <div className="text-center p-6 border border-primary-fixed/20 rounded-xl bg-primary-container">
                 <div className="w-16 h-16 bg-on-primary-container text-primary rounded-full flex items-center justify-center mx-auto mb-6">
                   <FaLaptop className="text-3xl" />
                 </div>
-                <h4 className="text-2xl font-semibold mb-2">التعليم الرقمي</h4>
+                <h4 className="text-2xl font-semibold mb-2">
+                  {t("التعليم الرقمي")}
+                </h4>
                 <p className="text-sm font-medium opacity-80">
-                  التعليم بنظام الجداول والمشجرات والخرائط الذهنيه والرسوم
-                  التوضيحيه.
+                  {t("التعليم بنظام الجداول والمشجرات والخرائط الذهنيه والرسوم التوضيحيه.")}
                 </p>
               </div>
               <div className="text-center p-6 border border-primary-fixed/20 rounded-xl bg-primary-container">
@@ -240,21 +227,21 @@ const AboutPage = ({ links }) => {
                   <FaBrain className="text-3xl" />
                 </div>
                 <h4 className="text-2xl font-semibold mb-2">
-                  المسارات المخصصة
+                  {t("المسارات المخصصة")}
                 </h4>
                 <p className="text-sm font-medium opacity-80">
-                  المستوي الأول للمبتدئين والمستوي الثاني للمتوسطين والمستوي
-                  الثالث لطلبه الإجازات والأسانيد.
+                  {t("المستوي الأول للمبتدئين والمستوي الثاني للمتوسطين والمستوي الثالث لطلبه الإجازات والأسانيد.")}
                 </p>
               </div>
               <div className="text-center p-6 border border-primary-fixed/20 rounded-xl bg-primary-container">
                 <div className="w-16 h-16 bg-on-primary-container text-primary rounded-full flex items-center justify-center mx-auto mb-6">
                   <FaTasks className="text-3xl" />
                 </div>
-                <h4 className="text-2xl font-semibold mb-2">التقييم المستمر</h4>
+                <h4 className="text-2xl font-semibold mb-2">
+                  {t("التقييم المستمر")}
+                </h4>
                 <p className="text-sm font-medium opacity-80">
-                  اختبارات دوريه بعد كل باب وبعد كل مستوي وتدريبات يوميه أثناء
-                  الدراسه.
+                  {t("اختبارات دوريه بعد كل باب وبعد كل مستوي وتدريبات يوميه أثناء الدراسه.")}
                 </p>
               </div>
             </div>
@@ -265,10 +252,10 @@ const AboutPage = ({ links }) => {
         <section className="py-24 px-4 md:px-16 text-center relative overflow-hidden">
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-semibold text-primary mb-6">
-              ابدأ رحلتك لتعليم إبنك او إبنتك التجويد فورا.
+              {t("ابدأ رحلتك لتعليم إبنك او إبنتك التجويد فورا.")}
             </h2>
             <p className="text-lg text-on-surface-variant mb-10">
-              انضم إلى حلقاتنا ودوراتنا.
+              {t("انضم إلى حلقاتنا ودوراتنا.")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
@@ -277,11 +264,8 @@ const AboutPage = ({ links }) => {
                 }
                 className="bg-primary text-on-primary px-10 py-4 rounded-full text-2xl font-semibold shadow-lg hover:shadow-xl transition-all active:scale-95"
               >
-                إشترك الآن
+                {t("إشترك الآن")}
               </button>
-              {/* <button className="border-2 border-secondary text-secondary px-10 py-4 rounded-full text-2xl font-semibold hover:bg-secondary-fixed-dim hover:text-on-secondary transition-all active:scale-95">
-                استعرض الدورات
-              </button> */}
             </div>
           </div>
         </section>

@@ -73,7 +73,7 @@
 body {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
   background-color: #f8faf8;
-  direction: rtl;
+  /* direction: rtl; */
 }
 
 .material-symbols-outlined {

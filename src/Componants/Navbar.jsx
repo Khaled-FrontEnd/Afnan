@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
+import { MdMenuBook } from "react-icons/md";
+import { IoMdHome } from "react-icons/io";
+import { IoMdInformationCircleOutline } from "react-icons/io";
+import { FaPhone } from "react-icons/fa6";
 
 function Navbar({ links }) {
   const { t, i18n } = useTranslation();
@@ -17,25 +21,25 @@ function Navbar({ links }) {
 
   // بيانات التنقل
   const navLinks = [
-    { label: "الرئيسية", href: "/", active: true },
+    { label: t("الرئيسية"), href: "/", active: true },
     {
-      label: "الدروس",
+      label: t("الدروس"),
       href: links.find((link) => link.name == "youtube")?.link,
     },
-    { label: "عن الأكاديمية", href: "/about" },
-    { label: "تواصل معنا", href: "/contact" },
+    { label: t("عن الأكاديمية"), href: "/about" },
+    { label: t("تواصل معنا"), href: "/contact" },
   ];
 
   // بيانات التنقل السفلي للموبايل
   const mobileNavItems = [
-    { icon: "home", label: "الرئيسية", href: "/", filled: true },
+    { icon: <IoMdHome size={26}/>, label: t("الرئيسية"), href: "/", filled: true },
     {
-      icon: "menu_book",
-      label: "الدروس",
+      icon: <MdMenuBook size={26} />,
+      label: t("الدروس"),
       href: links.find((link) => link.name == "youtube")?.link,
     },
-    { icon: "info", label: "عنا", href: "/about" },
-    { icon: "call_log", label: "تواصل", href: "/contact" },
+    { icon: <IoMdInformationCircleOutline size={26} />, label: t("عنا"), href: "/about" },
+    { icon: <FaPhone size={24} />, label: t("تواصل"), href: "/contact" },
   ];
 
   // تأثير التمرير للهيدر
@@ -49,7 +53,6 @@ function Navbar({ links }) {
   }, []);
 
   let location = useLocation().pathname;
-  // console.log(location)
 
   return (
     <>
@@ -61,27 +64,24 @@ function Navbar({ links }) {
         <nav className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-2 flex justify-between items-center">
           {/* Logo Section */}
           <div className="flex items-center gap-4">
-            <img alt="Logo" className="h-12 md:h-14 w-auto" src="./logo.png" />
-            {/* <h1 className="hidden md:block font-headline-md text-headline-md font-bold text-primary">
-              أفنان
-              </h1> */}
+            <img alt={t("شعار الموقع")} className="h-12 md:h-14 w-auto" src="./logo.png" />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 className={`font-label-md text-label-md transition-colors ${
                   location == link.href
                     ? "active-nav-link border-b-2 border-primary pb-1 text-primary font-semibold"
                     : "text-on-surface-variant hover:text-primary"
                 }`}
-                href={link.href}
-                target={link.label == "الدروس" && "_blank"}
+                to={link.href}
+                target={link.label == t("الدروس") && "_blank"}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -93,7 +93,7 @@ function Navbar({ links }) {
                 open(links.find((link) => link.name == "whatsapp")?.link)
               }
             >
-              إدعمنا
+              {t("إدعمنا")}
             </button>
           </div>
         </nav>
@@ -101,25 +101,19 @@ function Navbar({ links }) {
 
       <nav className="md:hidden fixed bottom-0 left-0 w-full bg-surface-container border-t border-outline-variant z-50 flex justify-around items-center px-4 py-3 rounded-t-2xl shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
         {mobileNavItems.map((item) => (
-          <a
+          <Link
             key={item.label}
             className={`flex flex-col items-center justify-center ${
               location == item.href
                 ? "bg-primary-container text-on-primary-container rounded-full px-6 py-1"
                 : "text-on-surface-variant"
             }`}
-            href={item.href}
+            to={item.href}
           >
-            <span
-              className="material-symbols-outlined"
-              style={{
-                fontVariationSettings: item.filled ? "'FILL' 1" : "'FILL' 0",
-              }}
-            >
-              {item.icon}
-            </span>
+            {item.icon}
+
             <span className="text-[10px] font-bold">{item.label}</span>
-          </a>
+          </Link>
         ))}
       </nav>
     </>

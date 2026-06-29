@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaEnvelope,
   FaPhone,
@@ -9,15 +9,21 @@ import {
 } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdVerified } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
-const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY; // ← غيّر ده بمفتاحك من web3forms.com
-// console.log(WEB3FORMS_ACCESS_KEY)
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
 const ContactPage = ({ links }) => {
+  const { t } = useTranslation();
+   useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    subject: "استفسار عام",
+    subject: t("استفسار عام"),
     message: "",
   });
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
@@ -44,9 +50,8 @@ const ContactPage = ({ links }) => {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          subject: `[أفنان - تواصل] ${formData.subject}`,
+          subject: `[أفنان - ${t("تواصل")}] ${formData.subject}`,
           message: formData.message,
-          // اختياري: تحديد صفحة الشكر أو تعطيلها
           redirect: "false",
         }),
       });
@@ -59,7 +64,7 @@ const ContactPage = ({ links }) => {
           name: "",
           email: "",
           phone: "",
-          subject: "استفسار عام",
+          subject: t("استفسار عام"),
           message: "",
         });
       } else {
@@ -80,16 +85,14 @@ const ContactPage = ({ links }) => {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tertiary-container/10 text-tertiary border border-tertiary-container/20 mb-6">
               <MdVerified className="text-lg" />
               <span className="text-sm font-medium">
-                متاحون دائماً لاستفساراتكم
+                {t("متاحون دائماً لاستفساراتكم")}
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">
-              تواصل معنا
+              {t("تواصل معنا")}
             </h1>
             <p className="text-lg text-on-surface-variant max-w-2xl mx-auto">
-              يشرفنا مرافقتكم في رحلتكم لتعلم القرآن الكريم والتميز العلمي.
-              فريقنا متاح دائماً لدعمكم والإجابة على استفساراتكم حول التسجيل،
-              المناهج، أو البرامج الأكاديمية.
+              {t("يشرفنا مرافقتكم في رحلتكم لتعلم القرآن الكريم والتميز العلمي. فريقنا متاح دائماً لدعمكم والإجابة على استفساراتكم حول التسجيل، المناهج، أو البرامج الأكاديمية.")}
             </p>
           </div>
         </section>
@@ -103,20 +106,20 @@ const ContactPage = ({ links }) => {
               style={{ boxShadow: "0 10px 30px -10px rgba(77, 148, 42, 0.08)" }}
             >
               <h2 className="text-3xl font-semibold text-on-surface mb-8">
-                أرسل لنا رسالة
+                {t("أرسل لنا رسالة")}
               </h2>
 
               {/* Success Message */}
               {status === "success" && (
                 <div className="mb-6 p-4 bg-primary/10 border border-primary/30 rounded-xl text-primary text-center font-medium">
-                  تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.
+                  {t("تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.")}
                 </div>
               )}
 
               {/* Error Message */}
               {status === "error" && (
                 <div className="mb-6 p-4 bg-error/10 border border-error/30 rounded-xl text-error text-center font-medium">
-                  ❌ حدث خطأ أثناء الإرسال. حاول مرة أخرى.
+                  {t("❌ حدث خطأ أثناء الإرسال. حاول مرة أخرى.")}
                 </div>
               )}
 
@@ -124,7 +127,7 @@ const ContactPage = ({ links }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-on-surface-variant block px-1">
-                      الاسم بالكامل
+                      {t("الاسم بالكامل")}
                     </label>
                     <input
                       name="name"
@@ -132,13 +135,13 @@ const ContactPage = ({ links }) => {
                       onChange={handleChange}
                       required
                       className="w-full h-14 bg-surface-container-lowest border border-outline-variant rounded-xl px-4 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none"
-                      placeholder="الاسم بالكامل"
+                      placeholder={t("الاسم بالكامل")}
                       type="text"
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-on-surface-variant block px-1">
-                      البريد الإلكتروني
+                      {t("البريد الإلكتروني")}
                     </label>
                     <input
                       name="email"
@@ -155,7 +158,7 @@ const ContactPage = ({ links }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-on-surface-variant block px-1">
-                      رقم الهاتف
+                      {t("رقم الهاتف")}
                     </label>
                     <input
                       name="phone"
@@ -169,7 +172,7 @@ const ContactPage = ({ links }) => {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-on-surface-variant block px-1">
-                      الموضوع
+                      {t("الموضوع")}
                     </label>
                     <select
                       name="subject"
@@ -177,17 +180,17 @@ const ContactPage = ({ links }) => {
                       onChange={handleChange}
                       className="w-full h-14 bg-surface-container-lowest border border-outline-variant rounded-xl px-4 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none appearance-none"
                     >
-                      <option>استفسار عام</option>
-                      <option>التسجيل في الدورات</option>
-                      <option>الدعم الأكاديمي</option>
-                      <option>مشكلة تقنية</option>
+                      <option>{t("استفسار عام")}</option>
+                      <option>{t("التسجيل في الدورات")}</option>
+                      <option>{t("الدعم الأكاديمي")}</option>
+                      <option>{t("مشكلة تقنية")}</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-on-surface-variant block px-1">
-                    رسالتك
+                    {t("رسالتك")}
                   </label>
                   <textarea
                     name="message"
@@ -195,7 +198,7 @@ const ContactPage = ({ links }) => {
                     onChange={handleChange}
                     required
                     className="w-full bg-surface-container-lowest border border-outline-variant rounded-xl p-4 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none resize-none"
-                    placeholder="كيف يمكننا مساعدتك؟"
+                    placeholder={t("كيف يمكننا مساعدتك؟")}
                     rows="5"
                   ></textarea>
                 </div>
@@ -207,12 +210,12 @@ const ContactPage = ({ links }) => {
                 >
                   {status === "loading" ? (
                     <>
-                      <span className="text-lg">جاري الإرسال...</span>
+                      <span className="text-lg">{t("جاري الإرسال...")}</span>
                       <div className="w-5 h-5 border-2 border-on-primary/30 border-t-on-primary rounded-full animate-spin"></div>
                     </>
                   ) : (
                     <>
-                      <span>إرسال الرسالة</span>
+                      <span>{t("إرسال الرسالة")}</span>
                       <FaPaperPlane />
                     </>
                   )}
@@ -225,7 +228,7 @@ const ContactPage = ({ links }) => {
               <div className="bg-primary text-on-primary rounded-2xl p-8 md:p-10 relative overflow-hidden group">
                 <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
                 <h3 className="text-2xl font-semibold mb-8 relative z-10">
-                  معلومات الاتصال
+                  {t("معلومات الاتصال")}
                 </h3>
                 <div className="space-y-8 relative z-10">
                   <div className="flex items-start gap-4">
@@ -234,7 +237,7 @@ const ContactPage = ({ links }) => {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-white/70 mb-1">
-                        راسلنا عبر البريد
+                        {t("راسلنا عبر البريد")}
                       </p>
                       <a
                         className="text-lg hover:underline transition-all"
@@ -252,7 +255,7 @@ const ContactPage = ({ links }) => {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-white/70 mb-1">
-                        اتصل بنا
+                        {t("اتصل بنا")}
                       </p>
                       <div className="flex flex-col gap-1">
                         <a
@@ -286,11 +289,10 @@ const ContactPage = ({ links }) => {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-white/70 mb-1">
-                        موقعنا
+                        {t("موقعنا")}
                       </p>
                       <p className="text-lg">
-                        أكاديمية أفنان لتعليم الأطفال أحكام تجويد القرآن الكريم
-                        طهطا، سوهاج، مصر
+                        {t("أكاديمية أفنان لتعليم الأطفال أحكام تجويد القرآن الكريم طهطا، سوهاج، مصر")}
                       </p>
                     </div>
                   </div>
