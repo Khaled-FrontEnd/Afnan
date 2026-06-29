@@ -10,8 +10,8 @@ import {
 import { FaLocationDot } from "react-icons/fa6";
 import { MdVerified } from "react-icons/md";
 
-const WEB3FORMS_ACCESS_KEY = import.meta.env.WEB3FORMS_ACCESS_KEY; // ← غيّر ده بمفتاحك من web3forms.com
-
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY; // ← غيّر ده بمفتاحك من web3forms.com
+// console.log(WEB3FORMS_ACCESS_KEY)
 const ContactPage = ({ links }) => {
   const [formData, setFormData] = useState({
     name: "",
