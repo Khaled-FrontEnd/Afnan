@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 import {
   FaCheck,
   FaStar,
@@ -13,8 +11,7 @@ import {
 import { MdMenuBook, MdHome, MdSchedule, MdArrowBack } from "react-icons/md";
 import { supabase } from "../utils/supabase";
 
-const Home = () => {
-
+const Home = ({ links }) => {
   const handleMouseDown = (e) => {
     e.currentTarget.style.transform = "scale(0.98)";
   };
@@ -22,10 +19,13 @@ const Home = () => {
     e.currentTarget.style.transform = "";
   };
 
+  const whatsapp = links?.find((item) => item?.name === "whatsapp")?.link;
+  // console.log(whatsapp);
+
   return (
     <div className="text-on-surface">
       {/* Header */}
-      <Navbar />
+      
 
       <main>
         {/* Hero Section */}
@@ -50,9 +50,7 @@ const Home = () => {
                 <button
                   onClick={() =>
                     window.open(
-                      `https://wa.me/201129059622?text=${encodeURIComponent(
-                        "نظام الدراسه"
-                      )}`
+                      `${whatsapp}?text=${encodeURIComponent("نظام الدراسه")}`
                     )
                   }
                   className="border-2 cursor-pointer border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-2"
@@ -63,9 +61,7 @@ const Home = () => {
                 <button
                   onClick={() =>
                     window.open(
-                      `https://wa.me/201129059622?text=${encodeURIComponent(
-                        "اريد الالتحاق بحلقات الأطفال"
-                      )}`
+                      `${whatsapp}?text=${encodeURIComponent("إلحاق ابني ")}`
                     )
                   }
                   className="border-2 cursor-pointer border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-2"
@@ -76,8 +72,8 @@ const Home = () => {
                 <button
                   onClick={() =>
                     window.open(
-                      `https://wa.me/201129059622?text=${encodeURIComponent(
-                        "اريد الالتحاق بحلقات الكبار"
+                      `${whatsapp}?text=${encodeURIComponent(
+                        "اريد الالتحاق بحلقات الكبار للإناث"
                       )}`
                     )
                   }
@@ -89,8 +85,8 @@ const Home = () => {
                 <button
                   onClick={() =>
                     window.open(
-                      `https://wa.me/201129059622?text=${encodeURIComponent(
-                        "اريد الالتحاق بحلقات الكبار"
+                      `${whatsapp}?text=${encodeURIComponent(
+                        "اريد الالتحاق بحلقات الكبار للذكور"
                       )}`
                     )
                   }
@@ -106,14 +102,14 @@ const Home = () => {
             <div className="order-1 md:order-2 flex justify-center md:mt-12">
               <div className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-2xl border-4 border-surface-container-lowest">
                 <iframe
-                  height={"250px"}
-                  width={"100%"}
-                  src="./video.mp4?autoplay=0&controls=1"
-                  title="منظومة أفنان لتعليم الأطفال تجويد القرآن (فى شهر واحد إن شاء الله تعالى)  واتس المؤلف 00201129059622"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
+                  height="250px"
+                  width="100%"
+                  src="https://www.youtube.com/embed/3ls03mOs-mM?si=iT8ETp34P4vUR1uQ?autoplay=0&controls=1"
+                  title="..."
+                  loading="lazy" // ← مهم
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                ></iframe>
+                />
                 <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black to-transparent">
                   <p className="text-white font-headline-md text-headline-md text-center">
                     منظومة أفنان لتعليم الأطفال أحكام تجويد القرآن (المستويات
@@ -204,7 +200,9 @@ const Home = () => {
                   <button
                     onClick={() =>
                       window.open(
-                        `https://youtube.com/playlist?list=PLtF30SVt7kmjemykrUKgg5eTE7ENQhytR&si=IJlB0TQGF_bdgStU`
+                        links?.find(
+                          (item) => item?.name === "youtube_kids_girls_playlist"
+                        )?.link
                       )
                     }
                     className="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform flex items-center gap-2 justify-center"
@@ -215,7 +213,9 @@ const Home = () => {
                   <button
                     onClick={() =>
                       window.open(
-                        `https://youtube.com/playlist?list=PLtF30SVt7kmijEnQQe1P_kyUxFt7PaBai&si=-A9EVg8LMSkbswsG`
+                        links?.find(
+                          (item) => item?.name === "youtube_kids_boys_playlist"
+                        )?.link
                       )
                     }
                     className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all flex items-center gap-2 justify-center"
@@ -229,9 +229,6 @@ const Home = () => {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };

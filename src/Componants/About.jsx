@@ -16,14 +16,12 @@ import {
   FaEnvelope,
   FaPhone,
 } from "react-icons/fa";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 
-const AboutPage = () => {
+const AboutPage = ({ links }) => {
   return (
     <div className="bg-surface text-on-surface ">
       {/* TopAppBar */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main>
         {/* Section 1: Hero */}
@@ -273,7 +271,12 @@ const AboutPage = () => {
               انضم إلى حلقاتنا ودوراتنا.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-primary text-on-primary px-10 py-4 rounded-full text-2xl font-semibold shadow-lg hover:shadow-xl transition-all active:scale-95">
+              <button
+                onClick={() =>
+                  open(links.find((link) => link.name == "whatsapp")?.link)
+                }
+                className="bg-primary text-on-primary px-10 py-4 rounded-full text-2xl font-semibold shadow-lg hover:shadow-xl transition-all active:scale-95"
+              >
                 إشترك الآن
               </button>
               {/* <button className="border-2 border-secondary text-secondary px-10 py-4 rounded-full text-2xl font-semibold hover:bg-secondary-fixed-dim hover:text-on-secondary transition-all active:scale-95">
@@ -283,9 +286,6 @@ const AboutPage = () => {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <Footer />
 
       <style jsx>{`
         .hero-gradient {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ links }) {
   const { t, i18n } = useTranslation();
   let [lang, setLang] = useState("ar");
   let [openMenu, setOpenMenu] = useState(false);
@@ -20,7 +20,7 @@ function Navbar() {
     { label: "الرئيسية", href: "/", active: true },
     {
       label: "الدروس",
-      href: "https://www.youtube.com/@%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%D8%A3%D9%81%D9%86%D8%A7%D9%86%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D8%A7%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84%D8%A3%D8%AD%D9%83%D8%A7%D9%85%D8%AA",
+      href: links.find((link) => link.name == "youtube")?.link,
     },
     { label: "عن الأكاديمية", href: "/about" },
     { label: "تواصل معنا", href: "/contact" },
@@ -29,7 +29,11 @@ function Navbar() {
   // بيانات التنقل السفلي للموبايل
   const mobileNavItems = [
     { icon: "home", label: "الرئيسية", href: "/", filled: true },
-    { icon: "menu_book", label: "الدروس", href: "https://www.youtube.com/@%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%D8%A3%D9%81%D9%86%D8%A7%D9%86%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D8%A7%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84%D8%A3%D8%AD%D9%83%D8%A7%D9%85%D8%AA" },
+    {
+      icon: "menu_book",
+      label: "الدروس",
+      href: links.find((link) => link.name == "youtube")?.link,
+    },
     { icon: "info", label: "عنا", href: "/about" },
     { icon: "call_log", label: "تواصل", href: "/contact" },
   ];
@@ -44,7 +48,7 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  let location = useLocation().pathname
+  let location = useLocation().pathname;
   // console.log(location)
 
   return (
@@ -86,14 +90,10 @@ function Navbar() {
             <button
               className="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:scale-95 transition-transform"
               onClick={() =>
-                open(
-                  `https://wa.me/201129059622?text=${encodeURIComponent(
-                    "اريد التسجيل"
-                  )}`
-                )
+                open(links.find((link) => link.name == "whatsapp")?.link)
               }
             >
-             إدعمنا
+              إدعمنا
             </button>
           </div>
         </nav>
