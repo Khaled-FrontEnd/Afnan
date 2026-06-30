@@ -13,6 +13,45 @@ import { supabase } from "../utils/supabase";
 import { useTranslation } from "react-i18next";
 
 const Home = ({ links }) => {
+  useEffect(() => {
+    // العنوان
+    document.title = "أفنان - أكاديمية تعليم القرآن والعلوم الإسلامية أونلاين";
+
+    // الوصف
+    const setMeta = (name, content, isProperty = false) => {
+      const attr = isProperty ? "property" : "name";
+      let tag = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attr, name);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    };
+
+    setMeta(
+      "description",
+      "تعلم القرآن الكريم والعلوم الإسلامية مع أفضل المعلمين أونلاين في أكاديمية أفنان"
+    );
+    setMeta("og:title", "أفنان - أكاديمية تعليم إسلامي", true);
+    setMeta(
+      "og:description",
+      "تعلم القرآن الكريم والعلوم الإسلامية أونلاين",
+      true
+    );
+    setMeta("og:type", "website", true);
+    setMeta("og:url", "https://afnanquran.com/", true);
+
+    // canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", "https://afnanquran.com/");
+  }, []);
+
   const { t } = useTranslation();
 
   const handleMouseDown = (e) => {
